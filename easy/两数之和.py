@@ -7,23 +7,7 @@ n = [2, 7, 11, 15]
 tar = 9
 
 class Solution(object):
-    def twoSum(self, nums, target):
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
-    def twoSum1(self, nums, target):
-        #构建一个空字典
-        num_dict = {}
-        #遍历列表，构建字典
-        for i in range(len(nums)):
-            num_dict[nums[i]] = i
-
-        #遍历列表，查找目标元素
-        for i in range(len(nums)):
-            if target - nums[i] in num_dict:
-                return [i,num_dict[target - nums[i]]]
-
+#遍历一遍数组，一边判断当前值是否满足情况，一边将值存入哈希，值为key,索引为value
     def twoSum2(self, nums, target):
         # 构建一个空字典
         num_dict = {}
